@@ -1,22 +1,19 @@
 {
-  dh,
-  lib,
+  infra-debug-tools,
   dockerTools,
 }:
 let
   port = 8008;
 in
 dockerTools.buildLayeredImage {
-  name = "budstudio/dump-headers";
+  name = "budstudio/concurrency-test";
   tag = "git";
 
-  contents = [
-    dh
-  ];
+  contents = [ infra-debug-tools ];
 
   config = {
     Cmd = [
-      (lib.getExe dh)
+      ("${infra-debug-tools}/bin/concurrency-test")
     ];
     Env = [
       "PORT=${builtins.toString port}"

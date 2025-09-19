@@ -4,7 +4,7 @@
 }:
 
 buildGoModule (finalAttrs: {
-  pname = "dh";
+  pname = "infra-debug-tools";
   version = "git";
 
   src = lib.cleanSourceWith {
@@ -21,10 +21,8 @@ buildGoModule (finalAttrs: {
   vendorHash = null;
 
   meta = {
-    description = "Your frenly neighbourhood CI/CD.";
     platforms = lib.platforms.unix;
     license = lib.licenses.agpl3Plus;
-    mainProgram = "dh";
     maintainers = with lib.maintainers; [ sinanmohd ];
   };
 })
