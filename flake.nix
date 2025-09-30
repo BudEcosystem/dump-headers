@@ -37,6 +37,9 @@
                 oci-concurrency-test = pkgs.callPackage ./nix/oci/concurrency-test.nix {
                   infra-debug-tools = self.packages.${system}.infra-debug-tools;
                 };
+                oci-stateful-counter = pkgs.callPackage ./nix/oci/stateful-counter.nix {
+                  infra-debug-tools = self.packages.${system}.infra-debug-tools;
+                };
               }
             )
           );
